@@ -79,8 +79,8 @@ function initExperiment() {
     markingMenuL1B6 = formatMarkingMenuData(menuL1B6Data);
     markingMenuL2B6 = formatMarkingMenuData(menuL2B6Data);
     markingMenuL3B6 = formatMarkingMenuData(menuL3B6Data);
-	radialMenuL1 = formatRadialMenuData(menuL1DData);
-	radialMenuL2 = formatRadialMenuData(menuL2DData);
+	radialMenuL1 = formatRadialMenuData(menuL1Data);
+	radialMenuL2 = formatRadialMenuData(menuL2Data);
 	radialMenuL3 = formatRadialMenuData(menuL3Data);
     radialMenuL1B6 = formatRadialMenuData(menuL1B6Data);
 	radialMenuL2B6 = formatRadialMenuData(menuL2B6Data);

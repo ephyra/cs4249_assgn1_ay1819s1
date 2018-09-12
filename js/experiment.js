@@ -60,7 +60,7 @@ function initExperiment() {
 
 	// Get Menus
 	var menuL1Data = getData(menuL1B6File);
-	var menuL2Data = getData(menuL2File);
+	var menuL2Data = getData(menuL2B6File);
 	var menuL3Data = getData(menuL3File);
 	
 	// Format CSV Menu to respective Menu structures

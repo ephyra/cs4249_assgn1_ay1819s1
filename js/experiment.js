@@ -61,14 +61,16 @@ function initExperiment() {
 	// Get Menus
 	var menuL1Data = getData(menuL1B6File);
 	var menuL2Data = getData(menuL2B6File);
+    var menuL1DData = getData(menuL1File);
+    var menuL2DData = getData(menuL2File);
 	var menuL3Data = getData(menuL3File);
 	
 	// Format CSV Menu to respective Menu structures
 	markingMenuL1 = formatMarkingMenuData(menuL1Data);
 	markingMenuL2 = formatMarkingMenuData(menuL2Data);
 	markingMenuL3 = formatMarkingMenuData(menuL3Data);
-	radialMenuL1 = formatRadialMenuData(menuL1Data);
-	radialMenuL2 = formatRadialMenuData(menuL2Data);
+	radialMenuL1 = formatRadialMenuData(menuL1DData);
+	radialMenuL2 = formatRadialMenuData(menuL2DData);
 	radialMenuL3 = formatRadialMenuData(menuL3Data);
 	
 	//Start the first trial

@@ -261,6 +261,7 @@ function markingMenuOnMouseDown(){
 
 	tracker.startTimer();
     mouseDistance = 0;
+    console.log("mouse reset");
 }
 
 //Function to start tracking timer on mouse down
@@ -427,6 +428,7 @@ function formatRadialMenuData(data) {
 $(document).mousemove(function(event) {
     if(prevLoc.x) {
         mouseDistance += Math.sqrt(Math.pow(prevLoc.x - event.clientX, 2) + Math.pow(prevLoc.y - event.clientY, 2));
+        console.log("current mouse dist is: " + mouseDistance);
     }
     prevLoc.x = event.clientX;
     prevLoc.y = event.clientY;

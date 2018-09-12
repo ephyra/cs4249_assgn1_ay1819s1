@@ -49,9 +49,13 @@ function initExperiment() {
 	for (var i = 1; i <= numTrials; i++) {
 		var cells = records[i].split(",");
 		var menuType = cells[0].trim();
+        console.log(menuType);
 		var menuDepth = cells[1].trim();
+        console.log(menuDepth);
         var menuBreadth = cells[2].trim();
+        console.log(menuBreadth);
 		var targetItem = cells[3].trim();
+        console.log(targetItem);
 		trialsData[i] = {
 			'Menu Type': menuType,
 			'Menu Depth': menuDepth,

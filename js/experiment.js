@@ -50,28 +50,37 @@ function initExperiment() {
 		var cells = records[i].split(",");
 		var menuType = cells[0].trim();
 		var menuDepth = cells[1].trim();
-		var targetItem = cells[2].trim();
+        var menuBreadth = cells[2].trim();
+		var targetItem = cells[3].trim();
 		trialsData[i] = {
 			'Menu Type': menuType,
 			'Menu Depth': menuDepth,
+            'Menu Breadth': menuBreadth,
 			'Target Item': targetItem
 		};
 	}
 
 	// Get Menus
-	var menuL1Data = getData(menuL1B6File);
-	var menuL2Data = getData(menuL2B6File);
-    var menuL1DData = getData(menuL1File);
-    var menuL2DData = getData(menuL2File);
-	var menuL3Data = getData(menuL3File);
+	var menuL1Data = getData(menuL1File);
+	var menuL2Data = getData(menuL2File);
+    var menuL3Data = getData(menuL3File);
+    var menuL1B6Data = getData(menuL1B6File);
+    var menuL2B6Data = getData(menuL2B6File);
+	var menuL3B6Data = getData(menuL3B6File);
 	
 	// Format CSV Menu to respective Menu structures
 	markingMenuL1 = formatMarkingMenuData(menuL1Data);
 	markingMenuL2 = formatMarkingMenuData(menuL2Data);
 	markingMenuL3 = formatMarkingMenuData(menuL3Data);
+    markingMenuL1B6 = formatMarkingMenuData(menuL1B6Data);
+    markingMenuL2B6 = formatMarkingMenuData(menuL2B6Data);
+    markingMenuL3B6 = formatMarkingMenuData(menuL3B6Data);
 	radialMenuL1 = formatRadialMenuData(menuL1DData);
 	radialMenuL2 = formatRadialMenuData(menuL2DData);
 	radialMenuL3 = formatRadialMenuData(menuL3Data);
+    radialMenuL1B6 = formatRadialMenuData(menuL1B6Data);
+	radialMenuL2B6 = formatRadialMenuData(menuL2B6Data);
+	radialMenuL3B6 = formatRadialMenuData(menuL3B6Data);
 	
 	//Start the first trial
 	nextTrial();
@@ -92,11 +101,13 @@ function nextTrial() {
 
 		var menuType = trialsData[currentTrial]['Menu Type'];
 		var menuDepth = trialsData[currentTrial]['Menu Depth'];
+        var menuBreadth = trialsData[currentTrial]['Menu Breadth'];
 		var targetItem = trialsData[currentTrial]['Target Item'];
 
 		document.getElementById("trialNumber").innerHTML = String(currentTrial) + "/" + String(numTrials);
 		document.getElementById("menuType").innerHTML = menuType;
 		document.getElementById("menuDepth").innerHTML = menuDepth;
+        document.getElementById("menuBreadth").innerHTML = menuBreadth;
 		document.getElementById("targetItem").innerHTML = targetItem;
 		document.getElementById("selectedItem").innerHTML = "&nbsp;";
 		// Set IV3 state over here
@@ -105,6 +116,7 @@ function nextTrial() {
 		tracker.trial = currentTrial;
 		tracker.menuType = menuType;
 		tracker.menuDepth = menuDepth;
+        tracker.menuBreadth = menuBreadth;
 		tracker.targetItem = targetItem;
 
 		if (menuType === "Marking") {
@@ -112,12 +124,24 @@ function nextTrial() {
 			initializeMarkingMenu();
 			
 			if(menuDepth == 1){
-				menu = MarkingMenu(markingMenuL1, document.getElementById('marking-menu-container'));
+                if(menuBreadth == 6) {
+                    menu = MarkingMenu(markingMenuL1B6, document.getElementById('marking-menu-container'));
+                } else {
+                    menu = MarkingMenu(markingMenuL1, document.getElementById('marking-menu-container'));
+                }		
 			}
 			else if(menuDepth == 2){
-				menu = MarkingMenu(markingMenuL2, document.getElementById('marking-menu-container'));
+                if(menuBreadth == 6) {
+                    menu = MarkingMenu(markingMenuL2B6, document.getElementById('marking-menu-container'));
+                } else {
+                    menu = MarkingMenu(markingMenuL2, document.getElementById('marking-menu-container'));
+                }
 			}else if(menuDepth == 3){
-				menu = MarkingMenu(markingMenuL3, document.getElementById('marking-menu-container'));
+				if(menuBreadth == 6) {
+                    menu = MarkingMenu(markingMenuL3B6, document.getElementById('marking-menu-container'));
+                } else {
+                    menu = MarkingMenu(markingMenuL3, document.getElementById('marking-menu-container'));
+                }
 			}
 
 			markingMenuSubscription = menu.subscribe((selection) => markingMenuOnSelect(selection));
@@ -126,12 +150,24 @@ function nextTrial() {
 
 			initializeRadialMenu();			
 			if (menuDepth == 1){
-				menu = createRadialMenu(radialMenuL1);
+				if(menuBreadth == 6) {
+                    menu = createRadialMenu(radialMenuL1B6);
+                } else {
+                    menu = createRadialMenu(radialMenuL1);
+                }
 			}
 			else if(menuDepth == 2){
-				menu = createRadialMenu(radialMenuL2);
+				if(menuBreadth == 6) {
+                    menu = createRadialMenu(radialMenuL2B6);
+                } else {
+                    menu = createRadialMenu(radialMenuL2);
+                }
 			}else if(menuDepth == 3){
-				menu = createRadialMenu(radialMenuL3);
+				if(menuBreadth == 6) {
+                    menu = createRadialMenu(radialMenuL3B6);
+                } else {
+                    menu = createRadialMenu(radialMenuL3);
+                }
 			}
 
 

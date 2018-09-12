@@ -32,6 +32,7 @@ var markingMenuSubscription = null;
 var radialMenuSvg = null;
 var mouseDistance = 0;
 var prevLoc = {x: null, y: null};
+var trialDone = false;
 
 
 
@@ -96,9 +97,10 @@ function initExperiment() {
 
 // Wrapper around nextTrial() to prevent click events while loading menus
 function loadNextTrial(e){
-	e.preventDefault();
-	nextTrial();
-	
+    if(trialDone = true) {
+        e.preventDefault();
+        nextTrial();
+    }
 }
 
 // Move to next trai and record events
@@ -268,6 +270,7 @@ function markingMenuOnMouseDown(){
 function markingMenuOnSelect(selectedItem){
     tracker.mouseDistance = mouseDistance;
 	tracker.recordSelectedItem(selectedItem.name);
+    trialDone = true;
 	document.getElementById("selectedItem").innerHTML = selectedItem.name;
 }
 
@@ -360,6 +363,7 @@ function radialMenuOnSelect() {
 
     tracker.mouseDistance = mouseDistance;
 	tracker.recordSelectedItem(this.id);
+    trialDone = true;
 	var radialmenu = document.getElementById('radialmenu');
 	radialmenu.parentNode.removeChild(radialmenu);
 	
@@ -428,7 +432,6 @@ function formatRadialMenuData(data) {
 $(document).mousemove(function(event) {
     if(prevLoc.x) {
         mouseDistance += Math.sqrt(Math.pow(prevLoc.x - event.clientX, 2) + Math.pow(prevLoc.y - event.clientY, 2));
-        console.log("current mouse dist is: " + mouseDistance);
     }
     prevLoc.x = event.clientX;
     prevLoc.y = event.clientY;

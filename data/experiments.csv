@@ -1,7 +1,7 @@
-Menu Type,Menu Depth,Target Item
-Marking,1,Clothing
-Marking,2,Hats
-Marking,3,Jeans
-Radial,1,Clothing
-Radial,2,Hats
-Radial,3,Jeans
+Menu Type,Menu Depth,Menu Breadth,Target Item
+Marking,1,6,Clothing
+Marking,2,6,Hats
+Marking,3,6,Jeans
+Radial,1,6,Clothing
+Radial,2,6,Hats
+Radial,3,6,Jeans

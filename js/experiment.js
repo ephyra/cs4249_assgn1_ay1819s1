@@ -97,7 +97,7 @@ function initExperiment() {
 
 // Wrapper around nextTrial() to prevent click events while loading menus
 function loadNextTrial(e){
-    if(trialDone = true) {
+    if(trialDone) {
         e.preventDefault();
         nextTrial();
     }

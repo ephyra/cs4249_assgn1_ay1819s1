@@ -1,0 +1,259 @@
+Id,Parent,Label
+1,0,Animals
+2,0,Food
+3,0,Clothing
+4,0,Continents
+5,0,Household
+6,0,School
+7,1,Mammals
+8,1,Reptiles
+9,1,Fish
+10,1,Birds
+11,1,Amphibians
+12,1,Invertebrates
+13,2,Fruit
+14,2,Vegetables
+15,2,Meat
+16,2,Dairy
+17,2,Oil
+18,2,Grains
+19,3,Tops
+20,3,Bottoms
+21,3,Shoes
+22,3,Hats
+23,3,Accessories
+24,3,Undergarment
+25,4,Asia
+26,4,Africa
+27,4,Europe
+28,4,South America
+29,4,North America
+30,4,Oceania
+31,5,Kitchen
+32,5,Bathroom
+33,5,Bedroom
+34,5,Living room
+35,5,Garage
+36,5,Entertainment Room
+37,6,Kindergartens
+38,6,Primary school
+39,6,Secondary School
+40,6,Polytechnics
+41,6,Junior colleges
+42,6,Universities
+43,7,Cats
+44,7,Dogs
+45,7,Hamsters
+46,7,Fox
+47,7,Rats
+48,7,Monkeys
+49,8,Lizard
+50,8,Snake
+51,8,Aligator
+52,8,Crocodile
+53,8,Turtle
+54,8,Tortoise
+55,9,Goldfish
+56,9,Shark
+57,9,Catfish
+58,9,Carp
+59,9,Tuna
+60,9,Salmon
+61,10,Parrot
+62,10,Owl
+63,10,Penguin
+64,10,Hummingbird
+65,10,Seagull
+66,10,Crow
+67,11,Tomato Frog
+68,11,American Toad
+69,11,Surinam Toad
+70,11,Salamander
+71,11,Newt
+72,11,Bullfrog
+73,12,Worm
+74,12,Leech
+75,12,Spider
+76,12,Snail
+77,12,Slug
+78,12,butterfly
+79,13,Orange
+80,13,Pineapple
+81,13,Strawberry
+82,13,Apple
+83,13,Pear
+84,13,Grapes
+85,14,Potatoes
+86,14,Onion
+87,14,Celery
+88,14,Garlic
+89,14,Lettuce
+90,14,Broccoli
+91,15,Beef
+92,15,Pork
+93,15,Ham
+94,15,Bacon
+95,15,Mutton
+96,15,Seafood
+97,16,Butter
+98,16,Milk
+99,16,Cheese
+100,16,Yoghurt
+101,16,Ice cream
+102,16,cream
+103,17,Palm oil
+104,17,Olive oil
+105,17,Coconut oil
+106,17,Corn oil
+107,17,Sunflower oil
+108,17,Sesame Oil
+109,18,Rice
+110,18,Wheat
+111,18,Oat
+112,18,Quinoa
+113,18,Barley
+114,18,Corn
+115,19,T-Shirt
+116,19,Jacket
+117,19,Vest
+118,19,Coat
+119,19,Blazer
+120,19,Polo-T
+121,20,Skirt
+122,20,Leggings
+123,20,Tights
+124,20,Jeans
+125,20,Bermuda shorts
+126,20,Trousers
+127,21,Boots
+128,21,Heels
+129,21,Sneakers
+130,21,Slippers
+131,21,Loafers
+132,21,Sandals
+133,22,Cap
+134,22,Sombrero
+135,22,Beret
+136,22,Tophat
+137,22,Beanie
+138,22,Fedora
+139,23,Necklace
+140,23,Earrings
+141,23,Rings
+142,23,Piercings
+143,23,Bracelet
+144,23,Anklet
+145,24,Bra
+146,24,Panties
+147,24,Thongs
+148,24,Briefs
+149,24,Boxers
+150,24,G-string
+151,25,Japan
+152,25,Singapore
+153,25,Malaysia
+154,25,Thailand
+155,25,China
+156,25,Japan
+157,26,Zimbabwe
+158,26,Nigeria
+159,26,Kenya
+160,26,Congo
+161,26,Algeria
+162,26,Ghana
+163,27,Spain
+164,27,France
+165,27,Germany
+166,27,England
+167,27,Belgium
+168,27,Italy
+169,28,Peru
+170,28,Argentina
+171,28,Brazil
+172,28,Paraguay
+173,28,Uraguay
+174,28,Colombia
+175,29,Canada
+176,29,USA
+177,29,Mexico
+178,29,Panama
+179,29,Cuba
+180,29,Jamaica
+181,30,Australia
+182,30,New Zealand
+183,30,Fiji
+184,30,Guam
+185,30,Timor-Leste
+186,30,Tonga
+187,31,Knife
+188,31,Dining table
+189,31,Stove
+190,31,Fridge
+191,31,Toaster
+192,31,Kettle
+193,32,Showerhead
+194,32,Bathtub
+195,32,Toilet
+196,32,Plunger
+197,32,Shampoo rack
+198,32,Towel Rack
+199,33,Bed
+200,33,Mattress
+201,33,Nightstand
+202,33,Wardrobe
+203,33,Closet
+204,33,Night Lamp
+205,34,Television
+206,34,Sofa
+207,34,Coffee table
+208,34,Shoe rack
+209,34,TV Stand
+210,34,Loveseats
+211,35,Car
+212,35,Toolbox
+213,35,Garden tools
+214,35,Ladder
+215,35,Drill
+216,35,Saw
+217,36,Gaming Console
+218,36,Music player
+219,36,Pool table
+220,36,Foosball table
+221,36,Board games
+222,36,Theatre system
+223,37,Sparkletots
+224,37,MOE kindergarten
+225,37,White Lodge
+226,37,Tots club
+227,37,Kidszone
+228,37,Zulfa Kindergarten
+229,38,Rulang Primary
+230,38,Tao Nan Primary
+231,38,Raffles Girls Primary
+232,38,Nanyang Primary
+233,38,Nan Hua Primary
+234,38,Chongfu Primary
+235,39,Dunman High
+236,39,River Valley High
+237,39,Hwa Chong Institute
+238,39,Raffles Institute
+239,39,Raffles Girls School
+240,39,Nanyang Girls High
+241,40,Nanyang Poly
+242,40,Singapore Poly
+243,40,Temasek Poly
+244,40,Republic Poly
+245,40,Ngee Ann Poly
+246,40,NIL
+247,41,Victoria JC
+248,41,Nanyang JC
+249,41,National JC
+250,41,Eunoia JC
+251,41,Temasek JC
+252,41,Catholic JC
+253,42,NUS
+254,42,NTU
+255,42,SMU
+256,42,SUTD
+257,42,SIT
+258,42,SUSS

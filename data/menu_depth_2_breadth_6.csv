@@ -1,0 +1,43 @@
+Id,Parent,Label
+1,0,Animals
+2,0,Food
+3,0,Clothing
+4,0,Continents
+5,0,Household
+6,0,School
+7,1,Mammals
+8,1,Reptiles
+9,1,Fish
+10,1,Birds
+11,1,Amphibians
+12,1,Invertebrates
+13,2,Fruit
+14,2,Vegetables
+15,2,Meat
+16,2,Dairy
+17,2,Oil
+18,2,Grains
+19,3,Tops
+20,3,Bottoms
+21,3,Shoes
+22,3,Hats
+23,3,Accessories
+24,3,Undergarment
+25,4,Asia
+26,4,Africa
+27,4,Europe
+28,4,South America
+29,4,North America
+30,4,Oceania
+31,5,Kitchen
+32,5,Bathroom
+33,5,Bedroom
+34,5,Living room
+35,5,Garage
+36,5,Cellar
+37,6,Pre-school
+38,6,Primary school
+39,6,Secondary School
+40,6,Polytechnics
+41,6,Junior colleges
+42,6,Universities

@@ -5,6 +5,9 @@ const trialsFile = "./data/experiments.csv"
 const menuL1File = "./data/menu_depth_1.csv"
 const menuL2File = "./data/menu_depth_2.csv"
 const menuL3File = "./data/menu_depth_3.csv"
+const menuL1B6File = "./data/menu_depth_1_breadth_6.csv"
+const menuL2B6File = "./data/menu_depth_2_breadth_6.csv"
+const menuL3B6File = "./data/menu_depth_3_breadth_6.csv"
 
 // Global variables
 var menu;
@@ -56,7 +59,7 @@ function initExperiment() {
 	}
 
 	// Get Menus
-	var menuL1Data = getData(menuL1File);
+	var menuL1Data = getData(menuL1B6File);
 	var menuL2Data = getData(menuL2File);
 	var menuL3Data = getData(menuL3File);
 	

@@ -227,9 +227,7 @@ function formatMarkingMenuData(data) {
 	for (var i = 1; i < numRecords; i++) {
 		var items = records[i].split(',');
 		var id = items[0].trim();
-        console.log(id);
 		var label = items[2].trim();
-        console.log(label);
 		menuItems[id] = {
 			'name': label,
 			'children': []
@@ -430,6 +428,6 @@ $(document).mousemove(function(event) {
     if(prevLoc.x) {
         mouseDistance += Math.sqrt(Math.pow(prevLoc.x - event.clientX, 2) + Math.pow(prevLoc.y - event.clientY, 2));
     }
-    lastSeenAt.x = event.clientX;
-    lastSeenAt.y = event.clientY;
+    prevLoc.x = event.clientX;
+    prevLoc.y = event.clientY;
 });

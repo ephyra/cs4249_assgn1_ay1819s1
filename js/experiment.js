@@ -30,6 +30,8 @@ var radialMenuL3B6 = [];
 var tracker = new ExperimentTracker();
 var markingMenuSubscription = null;
 var radialMenuSvg = null;
+var mouseDistance = 0;
+var prevLoc = {x: null, y: null};
 
 
 
@@ -55,13 +57,9 @@ function initExperiment() {
 	for (var i = 1; i <= numTrials; i++) {
 		var cells = records[i].split(",");
 		var menuType = cells[0].trim();
-        console.log(menuType);
 		var menuDepth = cells[1].trim();
-        console.log(menuDepth);
         var menuBreadth = cells[2].trim();
-        console.log(menuBreadth);
 		var targetItem = cells[3].trim();
-        console.log(targetItem);
 		trialsData[i] = {
 			'Menu Type': menuType,
 			'Menu Depth': menuDepth,
@@ -264,11 +262,12 @@ function formatMarkingMenuData(data) {
 function markingMenuOnMouseDown(){
 
 	tracker.startTimer();
+    mouseDistance = 0;
 }
 
 //Function to start tracking timer on mouse down
 function markingMenuOnSelect(selectedItem){
-
+    tracker.mouseDistance = mouseDistance;
 	tracker.recordSelectedItem(selectedItem.name);
 	document.getElementById("selectedItem").innerHTML = selectedItem.name;
 }
@@ -336,6 +335,7 @@ function toggleRadialMenu(e) {
 		
 			// Start timing once menu appears
 			tracker.startTimer();
+            mouseDistance = 0;
 		}
 	}else{
 		
@@ -347,9 +347,10 @@ function toggleRadialMenu(e) {
 				x: e.clientX,
 				y: e.clientY
 			}, radialMenuSvg);
-	
-		// Start timing once menu appears
-		tracker.startTimer();
+            // Start timing once menu appears
+            tracker.startTimer();
+            mouseDistance = 0;
+        
 		}
 	}
 	e.preventDefault();
@@ -358,6 +359,7 @@ function toggleRadialMenu(e) {
 //Callback for radialmenu when a leaf node is selected
 function radialMenuOnSelect() {
 
+    tracker.mouseDistance = mouseDistance;
 	tracker.recordSelectedItem(this.id);
 	var radialmenu = document.getElementById('radialmenu');
 	radialmenu.parentNode.removeChild(radialmenu);
@@ -422,3 +424,12 @@ function formatRadialMenuData(data) {
 	};
 
 }
+
+//mouse distance tracking
+$(document).mousemove(function(event) {
+    if(prevLoc.x) {
+        mouseDistance += Math.sqrt(Math.pow(prevLoc.x - event.clientX, 2) + Math.pow(prevLoc.y - event.clientY, 2));
+    }
+    lastSeenAt.x = event.clientX;
+    lastSeenAt.y = event.clientY;
+});

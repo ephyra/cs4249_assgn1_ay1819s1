@@ -7,11 +7,15 @@ const menuL3File = "./data/menu_depth_3.csv"
 const menuL1B6File = "./data/menu_depth_1_breadth_6.csv"
 const menuL2B6File = "./data/menu_depth_2_breadth_6.csv"
 const menuL3B6File = "./data/menu_depth_3_breadth_6.csv"
+const preExptTrialFile = "./data/trial.csv"
+const preExptTrialMenuL1File = "./data/trial_depth_1.csv"
+const preExptTrialMenuL2File = "./data/trial_depth_2.csv"
 var trialsFile = ["./data/Participant1.csv", "./data/Participant2.csv", "./data/Participant3.csv", "./data/Participant4.csv", "./data/Participant5.csv", "./data/Participant6.csv",
                     "./data/Participant7.csv", "./data/Participant8.csv", "./data/Participant9.csv", "./data/Participant10.csv", "./data/Participant11.csv", "./data/Participant12.csv"];
 
 // Global variables
 var menu;
+var ID = 0;
 var trialsData = [];
 var numTrials = 0;
 var currentTrial = 1;
@@ -28,12 +32,17 @@ var radialMenuL3 = [];
 var radialMenuL1B6 = [];
 var radialMenuL2B6 = [];
 var radialMenuL3B6 = [];
+var trialMarkingMenuL1 = [];
+var trialMarkingMenuL2 = [];
+var trialRadialMenuL1 = [];
+var trialRadialMenuL2 = [];
 var tracker = new ExperimentTracker();
 var markingMenuSubscription = null;
 var radialMenuSvg = null;
 var mouseDistance = 0;
 var prevLoc = {x: null, y: null};
 var trialDone = false;
+var actualExperiment = false;
 
 
 
@@ -50,7 +59,7 @@ function getData(relativePath) {
 
 // get participant number
 function getParticipantNum() {
-    var ID = 0;
+    
     while(true){
         ID = prompt("Please enter your participant ID");
         if(ID > 0 && ID <=12) {
@@ -59,14 +68,14 @@ function getParticipantNum() {
             alert("please enter a valid participant ID");
         }
     }
-    initExperiment(ID);
+    initTrial();
 }
 
 // Loads the CSV data files on page load and store it to global variables
-function initExperiment(ID) {
+function initTrial() {
 
-	// Get Trails
-	var data = getData(trialsFile[ID-1]);
+	// Get Trials
+	var data = getData(preExptTrialFile);
 
 	var records = data.split("\n");
 	numTrials = records.length - 1;
@@ -84,6 +93,15 @@ function initExperiment(ID) {
 		};
 	}
 
+	// Get trial Menus
+	var trialMenuL1Data = getData(preExptTrialMenuL1File);
+	var trialMenuL2Data = getData(preExptTrialMenuL2File);
+
+	trialMarkingMenuL1 = formatMarkingMenuData(trialMenuL1Data);
+    trialMarkingMenuL2 = formatMarkingMenuData(trialMenuL2Data);
+    trialRadialMenuL1 = formatRadialMenuData(trialMenuL1Data);
+    trialRadialMenuL2 = formatRadialMenuData(trialMenuL2Data);
+    
 	// Get Menus
 	var menuL1Data = getData(menuL1File);
 	var menuL2Data = getData(menuL2File);
@@ -106,6 +124,35 @@ function initExperiment(ID) {
 	radialMenuL2B6 = formatRadialMenuData(menuL2B6Data);
 	radialMenuL3B6 = formatRadialMenuData(menuL3B6Data);
 	
+	
+	//Start the first trial
+	nextTrial();
+}
+
+// Loads the CSV data files on page load and store it to global variables
+function initExperiment() {
+
+	// Get Trails
+	var data = getData(trialsFile[ID-1]);
+
+	var records = data.split("\n");
+    currentTrial = 1;
+	numTrials = records.length - 1;
+	for (var i = 1; i <= numTrials; i++) {
+		var cells = records[i].split(",");
+		var menuType = cells[0].trim();
+		var menuDepth = cells[1].trim();
+        var menuBreadth = cells[2].trim();
+		var targetItem = cells[3].trim();
+		trialsData[i] = {
+			'Menu Type': menuType,
+			'Menu Depth': menuDepth,
+            'Menu Breadth': menuBreadth,
+			'Target Item': targetItem
+		};
+	}
+
+
 	//Start the first trial
 	nextTrial();
 }
@@ -113,8 +160,16 @@ function initExperiment(ID) {
 // Wrapper around nextTrial() to prevent click events while loading menus
 function loadNextTrial(e){
     if(trialDone) {
-        e.preventDefault();
-        nextTrial();
+        if (nextButton.innerHTML == "Done") {
+            if(actualExperiment){
+                tracker.toCsv();
+            } else {
+                initExperiment();
+            }
+        } else {
+            e.preventDefault();
+            nextTrial();
+        }
     }
 }
 
@@ -150,14 +205,18 @@ function nextTrial() {
 			initializeMarkingMenu();
 			
 			if(menuDepth == 1){
-                if(menuBreadth == 6) {
+                if(menuBreadth == 3) {
+                    menu = MarkingMenu(trialMarkingMenuL1, document.getElementById('marking-menu-container'));
+                }else if(menuBreadth == 6) {
                     menu = MarkingMenu(markingMenuL1B6, document.getElementById('marking-menu-container'));
                 } else {
                     menu = MarkingMenu(markingMenuL1, document.getElementById('marking-menu-container'));
                 }		
 			}
 			else if(menuDepth == 2){
-                if(menuBreadth == 6) {
+                if(menuBreadth == 3) {
+                    menu = MarkingMenu(trialMarkingMenuL2, document.getElementById('marking-menu-container'));
+                }else if(menuBreadth == 6) {
                     menu = MarkingMenu(markingMenuL2B6, document.getElementById('marking-menu-container'));
                 } else {
                     menu = MarkingMenu(markingMenuL2, document.getElementById('marking-menu-container'));
@@ -176,14 +235,18 @@ function nextTrial() {
 
 			initializeRadialMenu();			
 			if (menuDepth == 1){
-				if(menuBreadth == 6) {
+				if(menuBreadth == 3) {
+                    menu = createRadialMenu(trialRadialMenuL1);
+                }else if(menuBreadth == 6) {
                     menu = createRadialMenu(radialMenuL1B6);
                 } else {
                     menu = createRadialMenu(radialMenuL1);
                 }
 			}
 			else if(menuDepth == 2){
-				if(menuBreadth == 6) {
+				if(menuBreadth == 3) {
+                    menu = createRadialMenu(trialRadialMenuL2);
+                }else if(menuBreadth == 6) {
                     menu = createRadialMenu(radialMenuL2B6);
                 } else {
                     menu = createRadialMenu(radialMenuL2);
@@ -204,7 +267,7 @@ function nextTrial() {
 		
 	    var nextButton = document.getElementById("nextButton");
 	    nextButton.innerHTML = "Done";
-		tracker.toCsv();
+
 	}
 }
 

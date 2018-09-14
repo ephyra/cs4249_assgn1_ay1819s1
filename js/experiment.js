@@ -43,6 +43,7 @@ var mouseDistance = 0;
 var prevLoc = {x: null, y: null};
 var trialDone = false;
 var actualExperiment = false;
+var nextButton = document.getElementById("nextButton");
 
 
 
@@ -134,6 +135,7 @@ function initExperiment() {
 
 	// Get Trails
 	var data = getData(trialsFile[ID-1]);
+    nextButton.innerHTML = "Next";
 
 	var records = data.split("\n");
     currentTrial = 1;
@@ -265,7 +267,6 @@ function nextTrial() {
 		currentTrial++;
 	} else {
 		
-	    var nextButton = document.getElementById("nextButton");
 	    nextButton.innerHTML = "Done";
 
 	}

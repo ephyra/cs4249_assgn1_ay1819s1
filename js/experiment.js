@@ -168,6 +168,8 @@ function loadNextTrial(e){
             } else {
                 initExperiment();
             }
+        } else if(document.getElementById("selectedItem").innerHTML != document.getElementById("targetItem").innerHTML) {
+            alert("wrong item selected, please try again");
         } else {
             e.preventDefault();
             nextTrial();

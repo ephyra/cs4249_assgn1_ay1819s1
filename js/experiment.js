@@ -51,6 +51,7 @@ var trialDone = false;
 
 // Load CSV files from data and return text
 function getData(relativePath) {
+    console.log(relativePath);
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.open("GET", relativePath, false);
 	xmlHttp.send(null);

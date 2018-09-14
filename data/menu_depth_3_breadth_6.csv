@@ -26,21 +26,21 @@ Id,Parent,Label
 25,4,Asia
 26,4,Africa
 27,4,Europe
-28,4,South America
-29,4,North America
+28,4,S.America
+29,4,N.America
 30,4,Oceania
 31,5,Kitchen
 32,5,Bathroom
 33,5,Bedroom
-34,5,Living room
+34,5,Livingroom
 35,5,Garage
 36,5,Entertainment Room
-37,6,Kindergartens
-38,6,Primary school
-39,6,Secondary School
-40,6,Polytechnics
-41,6,Junior colleges
-42,6,Universities
+37,6,Pre Sch
+38,6,Pri Sch
+39,6,Sec Sch
+40,6,Poly
+41,6,JC
+42,6,Uni
 43,7,Cats
 44,7,Dogs
 45,7,Hamsters
@@ -65,9 +65,9 @@ Id,Parent,Label
 64,10,Hummingbird
 65,10,Seagull
 66,10,Crow
-67,11,Tomato Frog
-68,11,American Toad
-69,11,Surinam Toad
+67,11,T.Frog
+68,11,A.Toad
+69,11,S.Toad
 70,11,Salamander
 71,11,Newt
 72,11,Bullfrog
@@ -103,10 +103,10 @@ Id,Parent,Label
 102,16,cream
 103,17,Palm oil
 104,17,Olive oil
-105,17,Coconut oil
+105,17,CoconutOil
 106,17,Corn oil
-107,17,Sunflower oil
-108,17,Sesame Oil
+107,17,SunflowerOil
+108,17,SesameOil
 109,18,Rice
 110,18,Wheat
 111,18,Oat
@@ -123,7 +123,7 @@ Id,Parent,Label
 122,20,Leggings
 123,20,Tights
 124,20,Jeans
-125,20,Bermuda shorts
+125,20,Berms
 126,20,Trousers
 127,21,Boots
 128,21,Heels
@@ -180,13 +180,13 @@ Id,Parent,Label
 179,29,Cuba
 180,29,Jamaica
 181,30,Australia
-182,30,New Zealand
+182,30,NZ
 183,30,Fiji
 184,30,Guam
 185,30,Timor-Leste
 186,30,Tonga
 187,31,Knife
-188,31,Dining table
+188,31,DiningTable
 189,31,Stove
 190,31,Fridge
 191,31,Toaster
@@ -195,8 +195,8 @@ Id,Parent,Label
 194,32,Bathtub
 195,32,Toilet
 196,32,Plunger
-197,32,Shampoo rack
-198,32,Towel Rack
+197,32,ShampooRack
+198,32,TowelRack
 199,33,Bed
 200,33,Mattress
 201,33,Nightstand
@@ -205,52 +205,52 @@ Id,Parent,Label
 204,33,Night Lamp
 205,34,Television
 206,34,Sofa
-207,34,Coffee table
-208,34,Shoe rack
+207,34,CoffeeTable
+208,34,ShoeRack
 209,34,TV Stand
 210,34,Loveseats
 211,35,Car
 212,35,Toolbox
-213,35,Garden tools
+213,35,GardenTools
 214,35,Ladder
 215,35,Drill
 216,35,Saw
-217,36,Gaming Console
-218,36,Music player
-219,36,Pool table
-220,36,Foosball table
-221,36,Board games
-222,36,Theatre system
+217,36,GameConsole
+218,36,MusicPlayer
+219,36,PoolTable
+220,36,Foosball
+221,36,BoardGames
+222,36,TheatreSystem
 223,37,Sparkletots
-224,37,MOE kindergarten
-225,37,White Lodge
+224,37,MOEKinder
+225,37,WhiteLodge
 226,37,Tots club
 227,37,Kidszone
-228,37,Zulfa Kindergarten
-229,38,Rulang Primary
-230,38,Tao Nan Primary
-231,38,Raffles Girls Primary
-232,38,Nanyang Primary
-233,38,Nan Hua Primary
-234,38,Chongfu Primary
-235,39,Dunman High
-236,39,River Valley High
-237,39,Hwa Chong Institute
-238,39,Raffles Institute
-239,39,Raffles Girls School
-240,39,Nanyang Girls High
-241,40,Nanyang Poly
-242,40,Singapore Poly
-243,40,Temasek Poly
-244,40,Republic Poly
-245,40,Ngee Ann Poly
+228,37,Zulfa
+229,38,RulangPri
+230,38,TaoNanPri
+231,38,RGPS
+232,38,NanyangPri
+233,38,NanHuaPri
+234,38,ChongFuPri
+235,39,DunmanHigh
+236,39,RVHS
+237,39,HCI
+238,39,RI
+239,39,RGS
+240,39,NGHS
+241,40,NYP
+242,40,SP
+243,40,TP
+244,40,RP
+245,40,NP
 246,40,NIL
-247,41,Victoria JC
-248,41,Nanyang JC
-249,41,National JC
-250,41,Eunoia JC
-251,41,Temasek JC
-252,41,Catholic JC
+247,41,VJC
+248,41,NYJC
+249,41,NJC
+250,41,EJC
+251,41,TJC
+252,41,CJC
 253,42,NUS
 254,42,NTU
 255,42,SMU

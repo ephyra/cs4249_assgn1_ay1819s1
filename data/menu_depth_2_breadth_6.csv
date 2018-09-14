@@ -26,18 +26,18 @@ Id,Parent,Label
 25,4,Asia
 26,4,Africa
 27,4,Europe
-28,4,South America
-29,4,North America
+28,4,S.America
+29,4,N.America
 30,4,Oceania
 31,5,Kitchen
 32,5,Bathroom
 33,5,Bedroom
-34,5,Living room
+34,5,Livingroom
 35,5,Garage
 36,5,Cellar
-37,6,Pre-school
-38,6,Primary school
-39,6,Secondary School
-40,6,Polytechnics
-41,6,Junior colleges
-42,6,Universities
+37,6,Pre Sch
+38,6,Pri Sch
+39,6,Sec Sch
+40,6,Poly
+41,6,JC
+42,6,Uni

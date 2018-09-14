@@ -1,24 +1,14 @@
 'use strict';
 
 // Location of data files
-const trialsFile1 = "./data/Participant1.csv"
-const trialsFile2 = "./data/Participant2.csv"
-const trialsFile3 = "./data/Participant3.csv"
-const trialsFile4 = "./data/Participant4.csv"
-const trialsFile5 = "./data/Participant5.csv"
-const trialsFile6 = "./data/Participant6.csv"
-const trialsFile7 = "./data/Participant7.csv"
-const trialsFile8 = "./data/Participant8.csv"
-const trialsFile9 = "./data/Participant9.csv"
-const trialsFile10 = "./data/Participant10.csv"
-const trialsFile11 = "./data/Participant11.csv"
-const trialsFile12 = "./data/Participant12.csv"
 const menuL1File = "./data/menu_depth_1.csv"
 const menuL2File = "./data/menu_depth_2.csv"
 const menuL3File = "./data/menu_depth_3.csv"
 const menuL1B6File = "./data/menu_depth_1_breadth_6.csv"
 const menuL2B6File = "./data/menu_depth_2_breadth_6.csv"
 const menuL3B6File = "./data/menu_depth_3_breadth_6.csv"
+var trialsFile = ["./data/Participant1.csv", "./data/Participant2.csv", "./data/Participant3.csv", "./data/Participant4.csv", "./data/Participant5.csv", "./data/Participant6.csv",
+                    "./data/Participant7.csv", "./data/Participant8.csv", "./data/Participant9.csv", "./data/Participant10.csv", "./data/Participant11.csv", "./data/Participant12.csv"];
 
 // Global variables
 var menu;
@@ -76,7 +66,7 @@ function getParticipantNum() {
 function initExperiment(ID) {
 
 	// Get Trails
-	var data = getData("trialsFile" + ID);
+	var data = getData(trialsFile[ID-1]);
 
 	var records = data.split("\n");
 	numTrials = records.length - 1;

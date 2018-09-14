@@ -6,34 +6,13 @@ This repository contains a basic interface and instrumentation to perform an emp
 
  You may fork this repository to your own Github account and clone your forked version for development. This will also help you use Github pages for hosting if you plan to conduct experiments online.
  
- ## Project Structure
- The interface is a static web project. However because of cross origin restrictions you will need a web server to run the experiment. Either turn on Github Pages(https://pages.github.com/) for your forked repository or setup a local server of your choice.
- 
-    ├── css                     # Style Sheets
-         ├── external           
-         ├── experiment.css    
-    ├── js                      # Javascript
-         ├── external          
-         ├── experiment.js    
-         ├── experiment-tracker.js
-    ├── data           
-         ├── experiment.csv     # Contains arrangement of trials
-         ├── menu_depth_1.csv   # Menu with depth 1
-         ├── menu_depth_2.csv   # Menu with depth 2
-         ├── manu_depth_3.csv   # Menu with depth 3
-    ├── experiment.html    
-
-Ideally, you shouldn't need to edit any of the files under "/external" unless your experimental design requires modifications to the menu implementation. Please avoid tweaking parameters of the menu such as color, size etc. To maintain consistency across the class we will use the default parameters as provided in this repository.
-
-### Marking Menu 
-- Popup: Left Mouse Down
-- Select: Stroke to leaf node
-- Reset: Release Mouse Down
-- Note:* Expert user's can make a fast stroke instead of waiting for the manu to pop up.
-### Radial Menu:
-- Popup: Right Click
-- Select: Left Click
-- Reset: Right Click
+ ## Changes done
+ 1. added prompt for participant ID and change trial file loaded according to ID.
+ 2. changed menu data to accommodate for 3 levels of menu depth and 2 levels of menu breadth.
+ 3. changed experiment data to accommodate for breadth field input.
+ 4. added pre-experiment trial files to allow users to familiarise with interface.
+ 5. Added mouse distance tracking, the distance tracking starts when menu is opened, and it is accumulative rather than end minus start position. The accumulation stops upon an item being selected.
+ 6. consent, pre-survey and post-survey will be done on paper.
    
 ### Recommended Browsers
 This repository has been tested on the browsers listed below. It is suggested you use Chrome.

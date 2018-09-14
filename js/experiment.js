@@ -62,7 +62,7 @@ function getParticipantNum() {
     var ID = 0;
     while(true){
         ID = prompt("Please enter your participant ID");
-        if(int > 0 && int <=12) {
+        if(ID > 0 && ID <=12) {
             break;
         } else {
             alert("please enter a valid participant ID");

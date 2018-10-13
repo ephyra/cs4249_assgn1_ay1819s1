@@ -136,7 +136,7 @@ function initExperiment() {
 	// Get Trails
 	var data = getData(trialsFile[ID-1]);
     nextButton.innerHTML = "Next";
-
+    actualExperiment = true;
 	var records = data.split("\n");
     currentTrial = 1;
 	numTrials = records.length - 1;
